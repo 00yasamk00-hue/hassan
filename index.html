@@ -65,9 +65,6 @@
         @keyframes pulse-subtle { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
         .pulse-btn { animation: pulse-subtle 2.5s infinite ease-in-out; }
 
-        @keyframes flash-glow { 0%,100%{border-color:rgba(244,63,94,.4);} 50%{border-color:rgba(245,158,11,.9);} }
-        .flash-card-glow { animation: flash-glow 2s infinite; }
-
         @keyframes skeleton-shimmer { 0%{background-position: 200% 0;} 100%{background-position: -200% 0;} }
         .skeleton { background: linear-gradient(90deg,#e2e8f0 0%,#f1f5f9 50%,#e2e8f0 100%); background-size: 200% 100%; animation: skeleton-shimmer 1.5s infinite; }
         .dark .skeleton { background: linear-gradient(90deg,#1e293b 0%,#334155 50%,#1e293b 100%); background-size: 200% 100%; animation: skeleton-shimmer 1.5s infinite; }
@@ -130,7 +127,6 @@
         @media (max-width: 767px) { .desktop-only-header { display: none !important; } }
         @media (min-width: 768px) { .mobile-only-header { display: none !important; } }
 
-        /* ✅ Mobile menu — ديناميكي */
         #mobileMenuPanel {
             max-height: 0;
             overflow: hidden;
@@ -298,45 +294,8 @@
         </div>
     </section>
 
-    <!-- Flash Deals -->
-    <section class="container mx-auto px-3 sm:px-4 pt-4 sm:pt-6 pb-2 no-print">
-        <div class="bg-gradient-to-l from-rose-500/10 via-amber-500/10 to-brand-500/10 dark:from-rose-950/20 dark:via-amber-950/20 dark:to-brand-950/20 border border-rose-200 dark:border-rose-900/50 rounded-2xl sm:rounded-3xl p-3 sm:p-6 mb-4 sm:mb-6">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 mb-3 sm:mb-5">
-                <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
-                    <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-rose-600 text-white flex items-center justify-center text-base sm:text-2xl shadow-lg shadow-rose-600/30 flex-shrink-0">
-                        <i class="fa-solid fa-stopwatch animate-pulse" aria-hidden="true"></i>
-                    </div>
-                    <div class="min-w-0 flex-1">
-                        <div class="flex items-center gap-2">
-                            <h2 class="text-sm sm:text-xl font-black text-slate-900 dark:text-white truncate">صفقات اليوم الخاطفة</h2>
-                            <span class="bg-rose-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-full flex-shrink-0">محدودة</span>
-                        </div>
-                        <p class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400">تخفيضات متجددة يومياً — تنتهي خلال:</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-1 sm:gap-2 font-mono" role="timer" aria-live="off">
-                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl shadow-sm text-center min-w-[44px]">
-                        <span id="flashTimerHours" class="block font-black text-sm sm:text-lg text-rose-600 dark:text-rose-400 leading-none">--</span>
-                        <span class="text-[8px] sm:text-[9px] text-slate-400 block mt-0.5 font-sans">ساعة</span>
-                    </div>
-                    <span class="font-black text-rose-600 text-sm sm:text-lg">:</span>
-                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl shadow-sm text-center min-w-[44px]">
-                        <span id="flashTimerMinutes" class="block font-black text-sm sm:text-lg text-rose-600 dark:text-rose-400 leading-none">--</span>
-                        <span class="text-[8px] sm:text-[9px] text-slate-400 block mt-0.5 font-sans">دقيقة</span>
-                    </div>
-                    <span class="font-black text-rose-600 text-sm sm:text-lg">:</span>
-                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl shadow-sm text-center min-w-[44px]">
-                        <span id="flashTimerSeconds" class="block font-black text-sm sm:text-lg text-rose-600 dark:text-rose-400 leading-none">--</span>
-                        <span class="text-[8px] sm:text-[9px] text-slate-400 block mt-0.5 font-sans">ثانية</span>
-                    </div>
-                </div>
-            </div>
-            <div id="flashDealsMiniGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-4"></div>
-        </div>
-    </section>
-
     <!-- Recently Viewed -->
-    <section id="recentlyViewedSection" class="container mx-auto px-3 sm:px-4 pb-2 hidden no-print">
+    <section id="recentlyViewedSection" class="container mx-auto px-3 sm:px-4 pt-4 sm:pt-6 pb-2 hidden no-print">
         <div class="flex items-center justify-between gap-2 mb-2">
             <h3 class="text-xs sm:text-sm font-black text-slate-900 dark:text-white flex items-center gap-1.5">
                 <i class="fa-regular fa-clock text-brand-700 dark:text-brand-400" aria-hidden="true"></i>
@@ -984,7 +943,7 @@
             phoneTarget: "970599920081",
             currency: "₪",
             dbName: "AbuAlHassanSupermarketDB_v2",
-            dbVersion: 3, // ✅ رُفع من 2 إلى 3 لإضافة index الـ SKU
+            dbVersion: 3,
             adminPinHash: "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
             maxQuantityPerItem: 50,
             freeDeliveryThreshold: 70,
@@ -1069,7 +1028,6 @@
             };
         }
 
-        // ✅ دقة الأرقام العشرية
         function roundMoney(n) {
             return Math.round((Number(n) + Number.EPSILON) * 100) / 100;
         }
@@ -1127,7 +1085,6 @@
                             }
                         }
 
-                        // ✅ v2 → v3: إضافة فهرس SKU
                         if (oldVersion < 3) {
                             const tx = e.target.transaction;
                             if (db.objectStoreNames.contains('products')) {
@@ -1763,30 +1720,6 @@
             openProductDetail(productId);
         }
 
-        function renderFlashDealsMiniGrid() {
-            const container = $('flashDealsMiniGrid');
-            if (!container) return;
-            const flashItems = AppState.products.filter(p => p.dealType === 'flash' || (p.originalPrice && p.originalPrice > p.price)).slice(0, 3);
-            if (!flashItems.length) { container.innerHTML = `<p class="col-span-full text-center text-xs text-slate-400 py-3">لا توجد صفقات خاطفة حالياً.</p>`; return; }
-            container.innerHTML = flashItems.map(p => {
-                const saveAmount = p.originalPrice ? (p.originalPrice - p.price).toFixed(1) : 0;
-                const soldOut = p.stock === 0;
-                return `
-                    <div class="bg-white dark:bg-slate-800 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-rose-200/80 dark:border-rose-900/60 shadow-sm flex items-center justify-between gap-2.5 sm:gap-3 flash-card-glow hover:shadow-md transition-shadow">
-                        <img src="${escapeHtml(p.image || PLACEHOLDER_IMG)}" alt="${escapeHtml(p.name)}" loading="lazy" decoding="async" class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover bg-slate-100 flex-shrink-0 ${soldOut ? 'opacity-60' : ''}" onerror="this.onerror=null;this.src='${PLACEHOLDER_IMG}'">
-                        <div class="flex-1 min-w-0">
-                            <span class="text-[9px] sm:text-[10px] font-black text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/60 px-1.5 sm:px-2 py-0.5 rounded-full inline-block mb-1">${soldOut ? 'نفذ' : `وفر ${saveAmount} ₪`}</span>
-                            <h4 class="font-black text-[11px] sm:text-xs text-slate-900 dark:text-white truncate" title="${escapeHtml(p.name)}">${escapeHtml(p.name)}</h4>
-                            <div class="flex items-baseline gap-1.5 mt-0.5">
-                                <span class="text-xs sm:text-sm font-black text-rose-600 dark:text-rose-400 font-mono">${formatCurrency(p.price)}</span>
-                                ${p.originalPrice ? `<span class="text-[10px] sm:text-xs text-slate-400 line-through font-mono">${formatCurrency(p.originalPrice)}</span>` : ''}
-                            </div>
-                        </div>
-                        <button onclick="App.addToCart(${p.id})" ${soldOut ? 'disabled' : ''} class="tap-target ${soldOut ? 'bg-slate-300 dark:bg-slate-700 cursor-not-allowed' : 'bg-rose-600 hover:bg-rose-700'} text-white w-9 h-9 rounded-xl flex items-center justify-center text-sm shadow transition-transform active:scale-95 flex-shrink-0"><i class="fa-solid ${soldOut ? 'fa-ban' : 'fa-cart-plus'}"></i></button>
-                    </div>`;
-            }).join('');
-        }
-
         function renderCategoryTabs() {
             const categories = ["الكل", ...new Set(AppState.products.map(p => p.category))];
             const container = $('categoryTabsContainer');
@@ -2232,13 +2165,11 @@
             AppState.products = await ProductRepo.all();
             await syncCartUI();
             await updateOrderBadgeCount();
-            renderFlashDealsMiniGrid();
             filterProductsUI();
             closeCheckoutModal();
             displayInvoiceModal(newOrder);
             requestNotificationPermissionAndNotify('تم استلام طلبك ✅', `طلبك #${orderId} بقيمة ${newOrder.grandTotal} ₪ قيد التحضير`);
 
-            // ✅ محاولة فتح WhatsApp بأمان
             const waMsg = constructWhatsAppOrderMessage(newOrder);
             const waUrl = `https://wa.me/${STORE_CONFIG.phoneTarget}?text=${encodeURIComponent(waMsg)}`;
             let popupOpened = false;
@@ -2461,7 +2392,6 @@
             if (originalPrice !== null && originalPrice <= price) { showToast("السعر الأصلي يجب أن يكون أكبر", "warning"); return; }
             await ProductRepo.upsert({ name, category, dealType, price, originalPrice, stock, sku, unit, badge, image, rating: 0, reviewsCount: 0, salesCount: 0, description: 'صنف مضاف حديثاً في سوبرماركت أبو الحسن.' });
             AppState.products = await ProductRepo.all();
-            renderFlashDealsMiniGrid();
             renderCategoryTabs();
             filterProductsUI();
             closeInventoryManagerModal();
@@ -2477,7 +2407,6 @@
             await ProductRepo.seedDefaults();
             await SettingsRepo.set('db_initialized', true);
             AppState.products = await ProductRepo.all();
-            renderFlashDealsMiniGrid();
             renderCategoryTabs();
             filterProductsUI();
             closeInventoryManagerModal();
@@ -2554,7 +2483,6 @@
                     for (const p of newProducts) await ProductRepo.upsert(p);
                     await SettingsRepo.set('db_initialized', true);
                     AppState.products = await ProductRepo.all();
-                    renderFlashDealsMiniGrid();
                     renderCategoryTabs();
                     filterProductsUI();
                     renderRecentlyViewed();
@@ -2595,38 +2523,6 @@
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
             showToast(`تم تصدير ${AppState.products.length} منتج`, 'success');
-        }
-
-        let flashIntervalId = null;
-        function startFlashDealsCountdown() {
-            function update() {
-                const now = new Date();
-                const end = new Date();
-                end.setHours(23, 59, 59, 999);
-                const diff = end - now;
-                if (diff <= 0) {
-                    $('flashTimerHours').textContent = "00";
-                    $('flashTimerMinutes').textContent = "00";
-                    $('flashTimerSeconds').textContent = "00";
-                    return;
-                }
-                const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const m = Math.floor((diff / 1000 / 60) % 60);
-                const s = Math.floor((diff / 1000) % 60);
-                $('flashTimerHours').textContent = String(h).padStart(2, '0');
-                $('flashTimerMinutes').textContent = String(m).padStart(2, '0');
-                $('flashTimerSeconds').textContent = String(s).padStart(2, '0');
-            }
-            update();
-            if (flashIntervalId) clearInterval(flashIntervalId);
-            flashIntervalId = setInterval(update, 1000);
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    if (flashIntervalId) { clearInterval(flashIntervalId); flashIntervalId = null; }
-                } else {
-                    if (!flashIntervalId) flashIntervalId = setInterval(update, 1000);
-                }
-            });
         }
 
         async function loadSavedCustomerProfile() {
@@ -2684,7 +2580,6 @@
         let productsSyncChannel = null;
         try { productsSyncChannel = new BroadcastChannel('abuhassan_products_sync'); } catch (e) {}
 
-        // ✅ hash خفيف بدل JSON.stringify
         function computeProductsHash(products) {
             let hash = products.length + ':';
             const sorted = products.slice().sort((a, b) => a.id - b.id);
@@ -2711,7 +2606,6 @@
                     });
                     AppState.recentlyViewed = AppState.recentlyViewed.filter(id => fresh.find(p => p.id === id));
 
-                    renderFlashDealsMiniGrid();
                     renderCategoryTabs();
                     filterProductsUI();
                     updateWishlistBadge();
@@ -2741,7 +2635,6 @@
             };
         }
 
-        // ✅ cooldown أطول + debounce
         const REFRESH_COOLDOWN_MS = 5000;
         let lastVisibilityRefresh = 0;
 
@@ -2823,8 +2716,6 @@
                 populateDeliveryZones();
                 await loadSavedCustomerProfile();
 
-                startFlashDealsCountdown();
-                renderFlashDealsMiniGrid();
                 renderCategoryTabs();
                 renderCouponsList();
                 filterProductsUI();
